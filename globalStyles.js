@@ -94,7 +94,9 @@ const nav = StyleSheet.create({
         flexDirection: 'row',
     },
     font: {
-        fontSize: 18
+        fontSize: 18,
+        paddingTop: 10,
+        paddingBottom: 10
     }
 });
 
@@ -112,8 +114,8 @@ const input = StyleSheet.create({
 
 const checkbox = StyleSheet.create({
     container: {
-        backgroundColor: 'black',
-        margin: 0
+        backgroundColor: 'transparent',
+        paddingVertical: 2
     }
 });
 

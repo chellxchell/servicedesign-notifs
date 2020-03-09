@@ -1,8 +1,9 @@
 import React from 'react';
-import Welcome from './pages/Welcome'
+import Controller from './Controller';
 
 export default function App() {
+  console.disableYellowBox = true;
     return (
-      <Welcome page='welcome'/>
+      <Controller/>
     );
 }

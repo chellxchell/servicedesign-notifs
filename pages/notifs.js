@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import * as globalStyles from '../globalStyles';
-import Goals from '../pages/goals'
 
 class Notifs extends React.Component {
     constructor(props) {
@@ -15,10 +14,9 @@ class Notifs extends React.Component {
 
 
     render = () => {
-        if (this.state.page == 'notifs') {
             return (
                 <View style={localStyles.container}>
-                    <Text style={globalStyles.fonts.header2}>How would you like to be notified</Text>
+                    <Text style={globalStyles.fonts.header2}>How would you like to be notified?</Text>
                     <View style={localStyles.imageContainer}>
                         <TouchableOpacity style={this.state.alerts ? localStyles.green : localStyles.regular} onPress={() => this.setState({ alerts: !this.state.alerts })}>
                             <Image style={localStyles.image} source={require('../images/notifs/alert.png')} />
@@ -30,20 +28,12 @@ class Notifs extends React.Component {
                         </TouchableOpacity>
                     </View>
                     <View style={globalStyles.nav.container}>
-                        <TouchableOpacity onPress={() => this.setState({ page: 'goals' })}><Text style={globalStyles.nav.font}>back</Text></TouchableOpacity>
-                        <TouchableOpacity><Text style={globalStyles.nav.font}>next</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.changeScreen('goals')}><Text style={globalStyles.nav.font}>back</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.changeScreen('exit')}><Text style={globalStyles.nav.font}>next</Text></TouchableOpacity>
                     </View>
                 </View >
             );
         }
-
-        else if (this.state.page == 'goals') {
-            return (
-                <Goals page={this.state.page} />
-            );
-        }
-
-    }
 }
 
 export default Notifs;
